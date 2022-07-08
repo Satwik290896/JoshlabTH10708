@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 164c4cdce74124edf9b790eb90566d3e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CameraBody_MeshPart0
+    100004: CameraBody_MeshPart1
+    100006: CameraBody_MeshPart2
+    100008: CameraPlate
+    100010: CameraTVBox
+    100012: StandBase
+    100014: StandConnection
+    100016: StandFocusControl
+    100018: StandHandle
+    100020: StandHandle1
+    100022: StandHandle2
+    100024: StandHanDRail
+    100026: StandHead
+    100028: StandMainBody
+    100030: StandPlate
+    100032: StandTubeInner
+    100034: StandTubeOuter
+    100036: StandTubeTop
+    400000: //RootNode
+    400002: CameraBody_MeshPart0
+    400004: CameraBody_MeshPart1
+    400006: CameraBody_MeshPart2
+    400008: CameraPlate
+    400010: CameraTVBox
+    400012: StandBase
+    400014: StandConnection
+    400016: StandFocusControl
+    400018: StandHandle
+    400020: StandHandle1
+    400022: StandHandle2
+    400024: StandHanDRail
+    400026: StandHead
+    400028: StandMainBody
+    400030: StandPlate
+    400032: StandTubeInner
+    400034: StandTubeOuter
+    400036: StandTubeTop
+    2300000: CameraBody_MeshPart0
+    2300002: CameraBody_MeshPart1
+    2300004: CameraBody_MeshPart2
+    2300006: CameraPlate
+    2300008: CameraTVBox
+    2300010: StandBase
+    2300012: StandConnection
+    2300014: StandFocusControl
+    2300016: StandHandle
+    2300018: StandHandle1
+    2300020: StandHandle2
+    2300022: StandHanDRail
+    2300024: StandHead
+    2300026: StandMainBody
+    2300028: StandPlate
+    2300030: StandTubeInner
+    2300032: StandTubeOuter
+    2300034: StandTubeTop
+    3300000: CameraBody_MeshPart0
+    3300002: CameraBody_MeshPart1
+    3300004: CameraBody_MeshPart2
+    3300006: CameraPlate
+    3300008: CameraTVBox
+    3300010: StandBase
+    3300012: StandConnection
+    3300014: StandFocusControl
+    3300016: StandHandle
+    3300018: StandHandle1
+    3300020: StandHandle2
+    3300022: StandHanDRail
+    3300024: StandHead
+    3300026: StandMainBody
+    3300028: StandPlate
+    3300030: StandTubeInner
+    3300032: StandTubeOuter
+    3300034: StandTubeTop
+    4300000: CameraBody_MeshPart0
+    4300002: CameraBody_MeshPart1
+    4300004: CameraBody_MeshPart2
+    4300006: CameraPlate
+    4300008: CameraTVBox
+    4300010: StandBase
+    4300012: StandConnection
+    4300014: StandFocusControl
+    4300016: StandHanDRail
+    4300018: StandHandle
+    4300020: StandHandle1
+    4300022: StandHandle2
+    4300024: StandHead
+    4300026: StandMainBody
+    4300028: StandPlate
+    4300030: StandTubeInner
+    4300032: StandTubeOuter
+    4300034: StandTubeTop
+    7400000: Default Take
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackhandle
+    second: {fileID: 2100000, guid: 69b1e61a37c544cc09e78179823630fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: camblack
+    second: {fileID: 2100000, guid: 730b3d4b0022e4ecab7a369823450d5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: camdarkgray
+    second: {fileID: 2100000, guid: 0a7e4a0c25e8d4db489c25a0035bcca4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: camgray
+    second: {fileID: 2100000, guid: 809174aaf4fde4183b4c6d90a7afb355, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monitorgray
+    second: {fileID: 2100000, guid: 59d6392f8d99d42f6b7bb94d29c585de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monitorscreen
+    second: {fileID: 2100000, guid: 843772aa96d474899b86b9da62714a53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moniyorblack
+    second: {fileID: 2100000, guid: 4e84be9588eef4308b4f50ad630afdb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tripod
+    second: {fileID: 2100000, guid: d7433c9bc03764c65aa01127176bea89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tripodchrome
+    second: {fileID: 2100000, guid: 9392bf31a221e44888ecca3d923e7bd0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

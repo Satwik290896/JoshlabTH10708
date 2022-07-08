@@ -1,0 +1,104 @@
+﻿<Properties StartupConfiguration="{06A82C5C-AA5B-D594-3207-C0979DA18000}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GUI/GUITest.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Experiment/Experiment_CoinTask.cs" Line="279" Column="9" IsPinned="True" />
+      <File FileName="Assets/Scripts/RotationButtons/LeftRotate.cs" />
+      <File FileName="Assets/Scripts/Logging/Logger_Threading.cs" />
+      <File FileName="Assets/Scripts/Experiment/ExperimentSettings_CoinTask.cs" />
+      <File FileName="Assets/Scripts/EEG Communication/TCP_Config.cs" />
+      <File FileName="Assets/Scripts/Logging/TrialLogTrack.cs" />
+      <File FileName="Assets/Scripts/EEG Communication/SyncboxControl.cs" />
+      <File FileName="Assets/Scripts/Experiment/Config_CoinTask.cs" />
+      <File FileName="Assets/TobiiPro/Common/Scripts/EyeTrackerBase.cs" />
+      <File FileName="Assets/Scripts/Logging/UIRawImageLogTrack.cs" />
+      <File FileName="Assets/Scripts/Logging/LineRendererLogTrack.cs" />
+      <File FileName="Assets/Scripts/Debugging/ControllerInputTester.cs" />
+      <File FileName="Assets/TobiiPro/ScreenBased/Scripts/Utility/Calibration.cs" />
+      <File FileName="Assets/Scripts/GUI/AnswerSelector.cs" />
+      <File FileName="Assets/Scripts/Experiment/InstructionsController.cs" />
+      <File FileName="Assets/Scripts/touchScreen/TouchScreenInputWrapper.cs" />
+      <File FileName="Assets/Scripts/touchScreen/PlayerMotion.cs" />
+      <File FileName="Assets/Scripts/Experiment/SceneController.cs" />
+      <File FileName="Assets/Scripts/GUI/GUITest.cs" Line="8" Column="10" />
+      <File FileName="Assets/Scripts/GUI/StartReset.cs" />
+      <File FileName="Assets/Scripts/StartwithSurvey.cs" />
+      <File FileName="Assets/Scripts/DistractorGame/BoxSwapGameController.cs" />
+      <File FileName="Assets/Scripts/DistractorGame/BoxSwapper.cs" />
+      <File FileName="Assets/Scripts/Box1.cs" />
+      <File FileName="Assets/Scripts/Box2.cs" />
+      <File FileName="Assets/Scripts/Box3.cs" />
+      <File FileName="Assets/Scripts/GUI/QuestionUI.cs" />
+      <File FileName="Assets/Scripts/Yes.cs" />
+      <File FileName="Assets/Scripts/Maybe.cs" />
+      <File FileName="Assets/Scripts/No.cs" />
+      <File FileName="Assets/Scripts/Environment/SpawnableObject.cs" />
+      <File FileName="Assets/Scripts/GUI/PirateUI.cs" />
+      <File FileName="Assets/Scripts/Experiment/UsefulFunctions.cs" />
+      <File FileName="Assets/Scripts/Experiment/JuiceController.cs" />
+      <File FileName="Assets/Scripts/Environment/EnvironmentPositionSelector.cs" />
+      <File FileName="Assets/Scripts/Logging/PositionSelectorLogTrack.cs" />
+      <File FileName="Assets/Scripts/Experiment/TrialController.cs" />
+      <File FileName="Assets/Scripts/OK.cs" />
+      <File FileName="Assets/Scripts/Ring.cs" />
+      <File FileName="Assets/Scripts/Logging/AudioLogTrack.cs" />
+      <File FileName="Assets/Scripts/Logging/LogTrack.cs" />
+      <File FileName="Assets/Scripts/Old/TileHighlighter.cs" />
+      <File FileName="Assets/Scripts/Logging/UIPanelLogTrack.cs" />
+      <File FileName="Assets/Scripts/GUI/UIController.cs" />
+      <File FileName="Assets/Scripts/Eyetracker/EyetrackerManager.cs" />
+      <File FileName="Assets/Scripts/Camera Controls/CameraController.cs" />
+      <File FileName="Assets/Scripts/Environment/EnvironmentController.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/RRButton.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/RightRotate.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/LongClickRR.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/LRButton.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/LongClickButton.cs" />
+      <File FileName="Assets/Scripts/Experiment/PlayerControls.cs" />
+      <File FileName="Assets/Scripts/CommandExecution.cs" />
+      <File FileName="Assets/Scripts/Anim. &amp; Visuals/VideoPlay.cs" />
+      <File FileName="Assets/Scripts/Experiment/Player.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/NewBehaviourScript1.cs" />
+      <File FileName="Assets/Scripts/Experiment/ScoreController.cs" />
+      <File FileName="Assets/Scripts/SubjectSelection&amp;Saving/Subject.cs" />
+      <File FileName="Assets/Scripts/Experiment/DefaultItem.cs" />
+      <File FileName="Assets/Scripts/SubjectSelection&amp;Saving/SubjectSelectionController.cs" />
+      <File FileName="Assets/Scripts/SubjectSelection&amp;Saving/SubjectReaderWriter.cs" />
+      <File FileName="Assets/Scripts/RotationButtons/LongClickStraight.cs" />
+      <File FileName="Assets/Scripts/Experiment/Trial.cs" />
+      <File FileName="Assets/Scripts/Environment/ObjectController.cs" />
+      <File FileName="Assets/XInputDotNet/Examples/XInputTestCS.cs" Line="58" Column="10" />
+      <File FileName="Assets/Scripts/Debugging/AlternateFPSScript.cs" Line="13" Column="7" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="YC_CoinTask" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Camera Controls" expanded="True" />
+                <Node name="Debugging" expanded="True" />
+                <Node name="Environment" expanded="True" />
+                <Node name="Experiment" expanded="True" />
+                <Node name="GUI" expanded="True">
+                  <Node name="GUITest.cs" selected="True" />
+                </Node>
+                <Node name="RotationButtons" expanded="True" />
+                <Node name="touchScreen" expanded="True" />
+              </Node>
+              <Node name="XInputDotNet" expanded="True">
+                <Node name="Examples" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5977a8a0-4b23-4a50-a233-4d84860b7d08" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

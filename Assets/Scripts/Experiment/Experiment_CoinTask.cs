@@ -1,0 +1,331 @@
+using UnityEngine;
+using System.Collections;
+using System.IO;
+using UnityEngine.UI;
+using System.Collections.Generic;
+public class Experiment_CoinTask : MonoBehaviour {
+
+	//clock!
+	public GameClock theGameClock;
+
+	//juice controller
+	public JuiceController juiceController;
+
+	//instructions
+	public InstructionsController englishInstructions;
+	public InstructionsController spanishInstructions;
+	[HideInInspector] public InstructionsController currInstructions;
+	//public InstructionsController inGameInstructionsController;
+	public CameraController cameraController;
+
+
+	//public EyetrackerManager eyeManager;
+
+	//logging
+	private string subjectLogfile; //gets set based on the current subject in Awake()
+	public Logger_Threading subjectLog;
+	private string eegLogfile; //gets set based on the current subject in Awake()
+	public Logger_Threading eegLog;
+	string sessionDirectory;
+	public static string sessionStartedFileName = "sessionStarted.txt";
+	public static int sessionID;
+
+	public MathOperations mathOperations;
+	//session controller
+	public TrialController trialController;
+
+	public static bool expReady=false;
+
+	//DISTRACTOR GAME
+	public BoxSwapGameController boxGameController;
+
+	//instruction video player
+	public VideoPlay instrVideoPlayer;
+
+	//score controller
+	public ScoreController scoreController;
+
+	//object controller
+	public ObjectController objectController;
+
+	//environment controller
+	public EnvironmentController environmentController;
+
+	//UI controller
+	public UIController uiController;
+
+	//avatar
+	public Player player;
+
+	//public bool isOculus = false;
+
+	//state enum
+	public ExperimentState currentState = ExperimentState.inExperiment;
+
+	public enum ExperimentState
+	{
+		//instructionsState,
+		inExperiment,
+		inExperimentOver,
+	}
+
+	//bools for whether we have started the state coroutines
+	bool isRunningInstructions = false;
+	bool isRunningExperiment = false;
+
+
+	//EXPERIMENT IS A SINGLETON
+	private static Experiment_CoinTask _instance;
+
+	public static Experiment_CoinTask Instance{
+		get{
+			return _instance;
+		}
+	}
+
+	public AnswerSelector answerSelect;
+
+	void Awake(){
+		if (_instance != null) {
+			Debug.Log("Instance already exists!");
+			return;
+		}
+		_instance = this;
+
+		juiceController.Init ();
+
+		cameraController.SetInGame(); //don't use oculus for replay mode
+
+		InitInstructionsController ();
+		ExperimentSettings_CoinTask.isLogging = false;
+		Debug.Log("I am Awake. You bullshit guy");
+		//InitLogging();
+//		else if(ExperimentSettings_CoinTask.isReplay) {
+//			currInstructions.TurnOffInstructions();
+//		}
+
+	}
+
+	void InitInstructionsController(){
+		switch (ExperimentSettings_CoinTask.myLanguage) {
+		case ExperimentSettings_CoinTask.LanguageSetting.English:
+			currInstructions = englishInstructions;
+			break;
+		case ExperimentSettings_CoinTask.LanguageSetting.Spanish:
+			currInstructions = spanishInstructions;
+			break;
+		}
+
+		uiController.InitText ();
+	}
+	
+	//TODO: move to logger_threading perhaps? *shrug*
+	void InitLogging(){
+        if (!ExperimentSettings_CoinTask.isReplay)
+        {
+			Debug.Log("logging path " + ExperimentSettings_CoinTask.defaultLoggingPath);
+            string subjectDirectory = ExperimentSettings_CoinTask.defaultLoggingPath + ExperimentSettings_CoinTask.currentSubject.name + "/";
+            sessionDirectory = subjectDirectory + "session_0" + "/";
+
+            sessionID = 0;
+            string sessionIDString = "_0";
+
+            if (!Directory.Exists(subjectDirectory))
+            {
+                Directory.CreateDirectory(subjectDirectory);
+            }
+            while (File.Exists(sessionDirectory + sessionStartedFileName))
+            {//Directory.Exists(sessionDirectory)) {
+                sessionID++;
+
+                sessionIDString = "_" + sessionID.ToString();
+
+                sessionDirectory = subjectDirectory + "session" + sessionIDString + "/";
+            }
+
+            //delete old files.
+            if (Directory.Exists(sessionDirectory))
+            {
+                DirectoryInfo info = new DirectoryInfo(sessionDirectory);
+                FileInfo[] fileInfo = info.GetFiles();
+                for (int i = 0; i < fileInfo.Length; i++)
+                {
+                    File.Delete(fileInfo[i].ToString());
+                }
+            }
+            else
+            { //if directory didn't exist, make it!
+                Directory.CreateDirectory(sessionDirectory);
+            }
+
+            subjectLog.fileName = sessionDirectory + ExperimentSettings_CoinTask.currentSubject.name + "Log" + ".txt";
+            eegLog.fileName = sessionDirectory + ExperimentSettings_CoinTask.currentSubject.name + "EEGLog" + ".txt";
+
+            ExperimentSettings_CoinTask.isLogging = true;
+        }
+	}
+
+	//In order to increment the session, this file must be present. Otherwise, the session has not actually started.
+	//This accounts for when we don't successfully connect to hardware -- wouldn't want new session folders.
+	//Gets created in TrialController after any hardware has connected and the instruction video has finished playing.
+	public void CreateSessionStartedFile(){
+		StreamWriter newSR = new StreamWriter (sessionDirectory + sessionStartedFileName);
+	}
+
+	// Use this for initialization
+	void Start () {
+		//Debug.Log("Experiment_CoinTask43554667: ");
+		//Config_CoinTask.Init();
+		//inGameInstructionsController.DisplayText("");
+	}
+
+	// Update is called once per frame
+	void Update () {
+		//Proceed with experiment if we're not in REPLAY mode
+
+		//Debug.Log("Experiment_CoinTask: " + ExperimentSettings_CoinTask.isReplay);
+		if (!ExperimentSettings_CoinTask.isReplay) { //REPLAY IS HANDLED IN REPLAY.CS VIA LOG FILE PARSING
+
+			/*if (currentState == ExperimentState.instructionsState && !isRunningInstructions) {
+				Debug.Log("running instructions");
+
+				StartCoroutine(RunInstructions());
+
+			}
+
+			else*/
+			//Debug.Log("Experiment_CoinTask Update Here: " + ExperimentState.inExperiment);
+			//Debug.Log("Experiment_CoinTask Update Here CurrentState: " + currentState);
+			//Debug.Log("Experiment_CoinTask Update Here isRunningExperiment: " + isRunningExperiment);
+			if (currentState == ExperimentState.inExperiment && !isRunningExperiment) {
+				Debug.Log("running experiment");
+				StartCoroutine(BeginExperiment());
+			}
+
+		}
+	}
+
+	public IEnumerator RunOutOfTrials(){
+
+		currInstructions.SetInstructionsColorful(); //want to keep a dark screen before transitioning to the end!
+		EndExperiment();
+
+		yield return 0;
+	}
+
+	public IEnumerator RunInstructions(){
+		isRunningInstructions = true;
+
+		//IF THERE ARE ANY PRELIMINARY INSTRUCTIONS YOU WANT TO SHOW BEFORE THE EXPERIMENT STARTS, YOU COULD PUT THEM HERE...
+
+		currentState = ExperimentState.inExperiment;
+		isRunningInstructions = false;
+
+		yield return 0;
+
+	}
+
+
+	public IEnumerator BeginExperiment(){
+		isRunningExperiment = true;
+
+		yield return StartCoroutine(trialController.RunExperiment());
+		
+		yield return StartCoroutine(RunOutOfTrials()); //calls EndExperiment()
+
+		yield return 0;
+
+	}
+
+	public void EndExperiment(){
+		currInstructions.DisplayText("...loading end screen...");
+
+		Debug.Log ("Experiment Over");
+		currentState = ExperimentState.inExperimentOver;
+		isRunningExperiment = false;
+#if UNITY_WEBPLAYER
+		Application.LoadLevel ("MainIsland"); //avoid main menu for web build.
+#else
+		SceneController.Instance.LoadEndMenu();
+#endif
+	}
+
+	//TODO: move to instructions controller...
+	public IEnumerator ShowSingleInstruction(string line, bool isDark, bool waitForButton, bool addRandomPostJitter, float minDisplayTimeSeconds){
+		if(isDark){
+			currInstructions.SetInstructionsColorful();
+		}
+		else{
+			currInstructions.SetInstructionsTransparentOverlay();
+		}
+		currInstructions.DisplayText(line);
+
+		yield return new WaitForSeconds (minDisplayTimeSeconds);
+		
+		if (waitForButton) {
+			yield return StartCoroutine (WaitForActionButton ());
+		}
+
+		if (addRandomPostJitter) {
+			yield return StartCoroutine(WaitForJitter ( Config_CoinTask.randomJitterMin, Config_CoinTask.randomJitterMax ) );
+		}
+
+		currInstructions.TurnOffInstructions ();
+		cameraController.SetInGame();
+	}
+	
+	public IEnumerator WaitForActionButton(){
+		bool hasPressedButton = false;
+		while(Input.GetAxis(Config_CoinTask.ActionButtonName) != 0f){
+			yield return 0;
+		}
+		while(!hasPressedButton){
+			if ((Input.GetAxis(Config_CoinTask.ActionButtonName) == 1.0f) ||
+				((PlayerMotion.touched == true) && (TrialController.dontSkipTouch == false)))
+			{
+				hasPressedButton = true;
+
+			}
+			else if (answerSelect.touchSelected == true)
+			{
+				hasPressedButton = true;
+				answerSelect.touchSelected = false;
+			}
+			else if (PlayerMotion.okTouch) {
+				hasPressedButton = true;
+				PlayerMotion.okTouch = false;
+			}
+			yield return 0;
+		}
+	}
+
+	public IEnumerator WaitForJitter(float minJitter, float maxJitter){
+		float randomJitter = Random.Range(minJitter, maxJitter);
+		trialController.GetComponent<TrialLogTrack>().LogWaitForJitterStarted(randomJitter);
+		
+		float currentTime = 0.0f;
+		while (currentTime < randomJitter) {
+			currentTime += Time.deltaTime;
+			yield return 0;
+		}
+
+		trialController.GetComponent<TrialLogTrack>().LogWaitForJitterEnded(currentTime);
+	}
+
+
+	public void OnExit(){ //call in scene controller when switching to another scene!
+		if (ExperimentSettings_CoinTask.isLogging) {
+			subjectLog.close ();
+			eegLog.close ();
+		}
+	}
+
+	void OnApplicationQuit(){
+		if (ExperimentSettings_CoinTask.isLogging) {
+			subjectLog.close ();
+			eegLog.close ();
+		}
+	}
+
+
+}

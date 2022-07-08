@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: c82e226bc1626457ba84f508673ca9c4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box02
+    100002: Box02_MeshPart0
+    100004: Box02_MeshPart1
+    100006: Box02_MeshPart2
+    100008: Box03
+    100010: Cylinder01
+    100012: Cylinder02
+    100014: Cylinder03
+    100016: Object01
+    100018: Plane01
+    100020: Plane03
+    100022: Plane05
+    100024: Tube03
+    100026: //RootNode
+    400000: Box02
+    400002: Box02_MeshPart0
+    400004: Box02_MeshPart1
+    400006: Box02_MeshPart2
+    400008: Box03
+    400010: Cylinder01
+    400012: Cylinder02
+    400014: Cylinder03
+    400016: Object01
+    400018: Plane01
+    400020: Plane03
+    400022: Plane05
+    400024: Tube03
+    400026: //RootNode
+    2300000: Box02_MeshPart0
+    2300002: Box02_MeshPart1
+    2300004: Box02_MeshPart2
+    2300006: Box03
+    2300008: Cylinder01
+    2300010: Cylinder02
+    2300012: Cylinder03
+    2300014: Object01
+    2300016: Plane01
+    2300018: Plane03
+    2300020: Plane05
+    2300022: Tube03
+    3300000: Box02_MeshPart0
+    3300002: Box02_MeshPart1
+    3300004: Box02_MeshPart2
+    3300006: Box03
+    3300008: Cylinder01
+    3300010: Cylinder02
+    3300012: Cylinder03
+    3300014: Object01
+    3300016: Plane01
+    3300018: Plane03
+    3300020: Plane05
+    3300022: Tube03
+    4300000: Box02_MeshPart0
+    4300002: Box02_MeshPart1
+    4300004: Box02_MeshPart2
+    4300006: Box03
+    4300008: Cylinder01
+    4300010: Cylinder02
+    4300012: Cylinder03
+    4300014: Object01
+    4300016: Plane01
+    4300018: Plane03
+    4300020: Plane05
+    4300022: Tube03
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box02Mat
+    second: {fileID: 2100000, guid: e81f5f8b7d2fa47ac9d17af1406b2c5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box03Mat
+    second: {fileID: 2100000, guid: c8b59954b426a4f6b9cbfcc7fc9b7c7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder01Mat
+    second: {fileID: 2100000, guid: f2d33e010ac324c12bc550d887bae84c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder02Mat
+    second: {fileID: 2100000, guid: fe5cc2c1752b5417b80edc745ef69e0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder03Mat
+    second: {fileID: 2100000, guid: dcac934ba2c6546aba13d10103731190, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Object01Mat
+    second: {fileID: 2100000, guid: de629de33fb264bf0b9f710274c1848c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane01Mat
+    second: {fileID: 2100000, guid: c39ba729f9de441c49c13a51fac70156, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane03Mat
+    second: {fileID: 2100000, guid: e56f00505a53a4fb79e2f3158c9d97c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane05Mat
+    second: {fileID: 2100000, guid: a4584ab22fd6b4a988b59c6fe037deac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tube03Mat
+    second: {fileID: 2100000, guid: 822b3902da02c4ecf8a02ca95b95e3ac, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 3
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
